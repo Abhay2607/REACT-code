@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 
 function App() {
   const [password, setPassword] = useState("");
-  const [length, setLength] = useState(8); // 👈 slider value state me
+  const [length, setLength] = useState(8); 
   const [includeNumber, setIncludeNumber] = useState(true);
   const [includeChar, setIncludeChar] = useState(true);
 
