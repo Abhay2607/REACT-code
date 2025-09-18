@@ -1,50 +1,56 @@
-import React from "react";
+import React from 'react'
 
-export default function Input({
-  label,
-  amount,
-  onAmountChange,
-  onCurrencyChange,
-  currencyOption = [],
-  selectcurrency = "inr",
+
+function InputBox({
+    label,
+    amount,
+    onAmountChange,
+    onCurrencyChange,
+    currencyOptions = [],
+    selectCurrency = "usd",
+    amountDisable = false,
+    currencyDisable = false,
+
+    className = "",
 }) {
-  return (
-    <>
-      <div className=" capitalize">
-        <div className="bg-white w-full flex justify-between  rounded-xl">
-          <div className="p-4  ">
-            <h1 className="text-2xl mb-3  font-bold">{label}</h1>
-            <input
-              className="bg-white w-[10rem] outline-none text-xl font-semibold"
-              placeholder="0"
-              type="number"
-              value={amount}
-              onChange={(e) =>
-                onAmountChange && onAmountChange(Number(e.target.value))
-              }
-            />
-          </div>
-          <div className="p-4  ">
-            <h1 className="text-2xl mb-3  font-bold">currency type</h1>
-            <div className="flex justify-end">
-              <select
-                className=" w-[5.5rem] outline-none text-xl font-semibold"
-                name=""
-                value={selectcurrency}
-                onChange={(e) =>
-                  onCurrencyChange && onCurrencyChange(e.target.value)
-                }
-              >
-                {currencyOption.map((currency) => (
-                  <option key={currency} value={currency}>
-                    {currency}
-                  </option>
-                ))}
-              </select>
+
+
+    return (
+        <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+            <div className="w-1/2">
+                <label className="text-black/40 mb-2 inline-block">
+                    {label}
+                </label>
+                <input
+
+                    className="outline-none w-full bg-transparent py-1.5"
+                    type="number"
+                    placeholder="Amount"
+                    disabled={amountDisable}
+                    value={amount}
+                    onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
+
+                />
             </div>
-          </div>
+            <div className="w-1/2 flex flex-wrap justify-end text-right">
+                <p className="text-black/40 mb-2 w-full">Currency Type</p>
+                <select
+                    className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
+                    value={selectCurrency}
+                    onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
+                    disabled={currencyDisable}
+                >
+
+                    {currencyOptions.map((currency) => (
+                        <option key={currency} value={currency}>
+                            {currency}
+                        </option>
+                    ))}
+
+                </select>
+            </div>
         </div>
-      </div>
-    </>
-  );
+    );
 }
+
+export default InputBox;
