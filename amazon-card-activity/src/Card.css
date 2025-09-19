@@ -1,0 +1,45 @@
+.container {
+    border: 1px solid #ddd;         
+    border-radius: 14px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;         
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
+
+.upperBox{
+   text-align: center;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.priceBox {
+    margin-top: 59px;
+    background: linear-gradient(135deg, #f7dfa5, #e0c367); 
+    height: 30px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #111;
+    transition: background 0.3s ease;
+}
+
+
+.priceBox:hover {
+    background: linear-gradient(135deg, #e0c367, #d4a017);
+    color: #000;
+}
+
+
+
