@@ -1,0 +1,36 @@
+
+.Product {
+  width: 250px;
+  padding: 20px;
+  margin: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.Product i {
+  font-size: 40px;
+  color: #ff6a00;
+  margin-bottom: 10px;
+}
+
+.Product h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.Product p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
